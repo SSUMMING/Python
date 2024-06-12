@@ -21,6 +21,27 @@
 
 ---
 
-### replace
+### 🟡 replace
+- replace(기존문자열, 바꿀문자열) 에서 replace는 문자열의 특정 위치를 지정하지 않고, 문자열 전체에서 일치하는 부분 문자열을 교체한다.
+
+- 내가 쓴 오답  
+  def solution(my_string, overwrite_string, s):  
+       answer = my_string.replace(my_string[s:s+len(overwrite_string)],overwrite_string)   
+
+- 오답 노트  
+  string = 'abcabc' 이고 나는 3번째 자리부터 끝까지 문자열 'xyz'로 교체하고싶다.
+  그러나 string.replace(string[3:],'xyz')를 쓰면 🔜 'xyzxyz'가 나온다 왜일까??
+
+  replace는 문자열의 특정 위치를 지정하는 것이 아니고, 내가 슬라이싱한 부분의 문자열'abc'자체를 xyz로 바꿔주는 것이다!
+  즉, abc를 xyz로 바꿔라 라는 코드를 짠것이다.
+
+- 해결방법  
+  replace가 아니고 문자열을 슬라이싱해서 +  문자열을 연결시킨다
+  
+  def solution(my_string, overwrite_string, s):  
+     before = my_string[:s]  
+     after = my_string[s+len(overwrite_string):]  
+     answer = before + overwrite_string + after  
+     return answer
 - 
 
