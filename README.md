@@ -43,5 +43,21 @@
      after = my_string[s+len(overwrite_string):]  
      answer = before + overwrite_string + after  
      return answer
-- 
+
+---
+
+### 🟡 Boolean
+- Boolean 사용법 IN 조건문
+- if (조건문):   
+         수행문        => 조건문이 True일 때, 수행문(조건문 내부코드)를 실행하라!
+
+- 예시   
+  is_raining = True   
+
+
+  if is_raining:   
+           print("Take an umbrella!")
+  
+  else:   
+           print("No need for an umbrella today.")
 
